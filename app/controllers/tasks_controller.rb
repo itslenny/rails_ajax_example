@@ -11,8 +11,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    task_count = Task.all.length
-    Task.create title:params[:task][:title],sort: task_count
+    tasks = Task.all.order(sort: :asc)
+    new_sort = tasks.length > 0 ?  tasks.last.sort + 1 : 0;
+    Task.create title:params[:task][:title],sort: new_sort
     redirect_to :tasks
   end
 
