@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root :to => redirect('/tasks')
+
   resources :tasks
+
   patch 'tasks/:id/sort-up' => 'tasks#sort_up', as: 'sort_up_task'
   patch 'tasks/:id/sort-down' => 'tasks#sort_down', as: 'sort_down_task'
 

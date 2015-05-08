@@ -1,0 +1,10 @@
+<% @tasks.each do |t| %>
+  <tr>
+    <td><%= t.sort %></td>
+    <td><%= t.title %></td>
+    <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_task_path(t), :data=>{toggle:'modal',target:'#myModal'} %></td>
+    <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, t, :class=>'ajax-task-delete' %></td>
+    <td><%= link_to '<i class="glyphicon glyphicon-arrow-up"></i>'.html_safe, sort_up_task_path(t), :class=>'ajax-task-sort' %></td>
+    <td><%= link_to '<i class="glyphicon glyphicon-arrow-down"></i>'.html_safe, sort_down_task_path(t), :class=>'ajax-task-sort' %></td>
+  </tr>
+<% end %>
