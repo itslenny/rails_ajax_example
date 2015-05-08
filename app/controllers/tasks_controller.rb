@@ -16,6 +16,15 @@ class TasksController < ApplicationController
     redirect_to :tasks
   end
 
+  def edit
+    @task = Task.find_by_id params[:id]
+  end
+
+  def update
+    Task.update params[:id], title: params[:task][:title]
+    redirect_to :tasks
+  end
+
   def destroy
     Task.destroy params[:id]
     redirect_to :tasks

@@ -9,6 +9,7 @@
       <tr>
         <td><%= t.sort %></td>
         <td><%= t.title %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_task_path(t) %></td>
         <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, t, method: :delete %></td>
         <td><%= link_to '<i class="glyphicon glyphicon-arrow-up"></i>'.html_safe, sort_up_task_path(t), method: :patch %></td>
         <td><%= link_to '<i class="glyphicon glyphicon-arrow-down"></i>'.html_safe, sort_down_task_path(t), method: :patch %></td>
